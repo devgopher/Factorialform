@@ -16,25 +16,24 @@
             <Setter Property="Background" Value="LightBlue"/>
         </Style>
         <Image x:Key="CloseImg" Source="Resources\cross108.png" ></Image>
-        <Image x:Key="MiniImg" Source="Resources\window5.png" ></Image>
+        <Image x:Key="MiniImg" Source="Resources\maximize3.png" ></Image>
     </Window.Resources>
 
-    <DockPanel x:Name="MainWindowStyled">
-        <Grid Width="400">
+    <DockPanel x:Name="MainWindowStyled" Width="auto" HorizontalAlignment="Stretch">
+        <Grid Width="auto">
             <Grid.RowDefinitions>
                 <RowDefinition Height="34"/>
                 <RowDefinition Height="117*"/>
             </Grid.RowDefinitions>
 
-            <DockPanel x:Name="TitleBar" VerticalAlignment="Top" Height="34" Background="LightGray" MouseLeftButtonDown="DragWindow" Grid.RowSpan="2">
+            <DockPanel x:Name="TitleBar" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="34" Width="auto" Background="LightGray" MouseLeftButtonDown="DragWindow" Grid.RowSpan="2">
                 <Button x:Name="CloseButton" Background="DarkGray" DockPanel.Dock="Right" Width="30" Height="30" Margin="3,1,2,2" Content="{StaticResource CloseImg}" Click="CloseClick"/>
-                <Button x:Name="MinButton" Background="DarkGray" DockPanel.Dock="Right" Width="30" Height="30" Margin="3,1,2,2"  Content="{StaticResource MiniImg}" Click="MinClick"/>
+                <Button x:Name="MaxButton" Background="DarkGray" DockPanel.Dock="Right" Width="30" Height="30" Margin="3,1,2,2"  Content="{StaticResource MiniImg}" Click="MaxClick"/>
                 <Image Source="Resources\TestLogo.png" HorizontalAlignment="Left"></Image>
             </DockPanel>
 
-
-            <ComboBox x:Name="factorial_box" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="400" Margin="0,0.4,0,0" Grid.Row="1"/>
-            <Button x:Name="do_it" Content="Сформировать" Style="{StaticResource ButtonStyle}" Click="DoItClick" HorizontalAlignment="Left" Height="29" Margin="235,177.4,0,0" VerticalAlignment="Top" Width="155" Grid.Row="1"/>
+            <ComboBox x:Name="factorial_box" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="39" Width="auto" Margin="0,0.4,0,0" Grid.Row="1"/>
+            <Button x:Name="do_it" Content="Сформировать" Style="{StaticResource ButtonStyle}" Click="DoItClick" HorizontalAlignment="Right" Height="29" Margin="235,177.4,0,0" VerticalAlignment="Bottom" Width="155" Grid.Row="1"/>
         </Grid>
     </DockPanel>
 </Window>

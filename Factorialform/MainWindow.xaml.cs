@@ -20,16 +20,18 @@ namespace Factorialform
 
         private void DoItClick(object sender, RoutedEventArgs e)
         {
-            try {
+            try
+            {
                 // Получаем случайное число
                 var random = Logic.Logic.Random();
                 // Вычисляем факториал
                 var fact = Logic.Logic.Factorial(random);
                 // Добавляем новый пункт
                 factorial_box.Items.Add(random + "! =" + fact.ToString());
-            } catch ( Logic.LogicException le )
+            }
+            catch (Logic.LogicException le)
             {
-                MessageBox.Show( le.Message );
+                MessageBox.Show(le.Message);
             }
         }
 
@@ -38,9 +40,12 @@ namespace Factorialform
             this.Close();
         }
 
-        private void MinClick(object sender, RoutedEventArgs e)
+        private void MaxClick(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            else
+                this.WindowState = WindowState.Maximized;
         }
 
         private void DragWindow(object sender, MouseButtonEventArgs e)

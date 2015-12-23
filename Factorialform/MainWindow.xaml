@@ -1,0 +1,40 @@
+﻿<Window x:Class="Factorialform.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Factorialform"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="400"
+        ResizeMode="CanMinimize"
+        WindowStyle="None"
+        BorderThickness="1"
+        BorderBrush="Brown">
+
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+        </Style>
+        <Image x:Key="CloseImg" Source="Resources\cross108.png" ></Image>
+        <Image x:Key="MiniImg" Source="Resources\window5.png" ></Image>
+    </Window.Resources>
+
+    <DockPanel x:Name="MainWindowStyled">
+        <Grid Width="400">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34"/>
+                <RowDefinition Height="117*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel x:Name="TitleBar" VerticalAlignment="Top" Height="34" Background="LightGray" MouseLeftButtonDown="DragWindow" Grid.RowSpan="2">
+                <Button x:Name="CloseButton" Background="DarkGray" DockPanel.Dock="Right" Width="30" Height="30" Margin="3,1,2,2" Content="{StaticResource CloseImg}" Click="CloseClick"/>
+                <Button x:Name="MinButton" Background="DarkGray" DockPanel.Dock="Right" Width="30" Height="30" Margin="3,1,2,2"  Content="{StaticResource MiniImg}" Click="MinClick"/>
+                <Image Source="Resources\TestLogo.png" HorizontalAlignment="Left"></Image>
+            </DockPanel>
+
+
+            <ComboBox x:Name="factorial_box" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="400" Margin="0,0.4,0,0" Grid.Row="1"/>
+            <Button x:Name="do_it" Content="Сформировать" Style="{StaticResource ButtonStyle}" Click="DoItClick" HorizontalAlignment="Left" Height="29" Margin="235,177.4,0,0" VerticalAlignment="Top" Width="155" Grid.Row="1"/>
+        </Grid>
+    </DockPanel>
+</Window>
